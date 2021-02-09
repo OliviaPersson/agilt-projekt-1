@@ -1,7 +1,5 @@
 #Implements a start menu for a adventure type game.
 
-#Implements a start menu for a adventure type game.
-
 def start():
     count = 0
     while True:
@@ -23,7 +21,7 @@ def start():
             #Death function call 
             cause = "This will be printed by Death() function"
             
-            death()
+            death(cause)
             pass
         else:
             #No valid input from player
@@ -36,4 +34,3 @@ def death(cause):
     print(cause)
     # Returns to main menu
     main_menu()
-
