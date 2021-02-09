@@ -6,13 +6,13 @@ def count_and_compere_guessednumber():
         guess = int(input())
         if guess != random_number():
             if guess < random_number():
-                print_guesst_status(count,'to low')
+                print_guess_status(count,'to low')
                 count += 1
             elif guess > random_number():
-                print_guesst_status(count,'to high')
+                print_guess_status(count,'to high')
                 count += 1
         else:
-            print_guesst_status(count,'right')
+            print_guess_status(count,'right')
 
     print('Do you want to play again? y/n')
     answer = input()
