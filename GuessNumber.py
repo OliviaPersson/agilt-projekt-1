@@ -13,18 +13,20 @@ def random_number():
 def count_and_compere_guessednumber():
     #Take a number as an input and compere to a random number and call a function for printing the resault
     count = 1
+    answer = random_number()
     while count <= 3:
         print('Guess a number: ')
         guess = int(input())
-        if guess != random_number():
-            if guess < random_number():
+        if guess != answer:
+            if guess < answer:
                 print_guess_status('to low',count)
                 count += 1
-            elif guess > random_number():
+            elif guess > answer:
                 print_guess_status('to high',count)
                 count += 1
         else:
             print_guess_status('right',count)
+            break
 
     print('Do you want to play again? y/n')
     answer = input()
