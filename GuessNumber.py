@@ -1,3 +1,8 @@
+def random_number():
+    #Returns a random number 
+    from random import randint
+    return randint(1,10)
+
 def count_and_compere_guessednumber():
     #Take a number as an input and compere to a random number and call a function for printing the resault
     count = 1
