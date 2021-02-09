@@ -3,7 +3,7 @@
 def start():
     count = 0
     while True:
-        #Prints a nintro message
+        #Prints an intro message to player
         print("Suddenly you awake...")
         print("You are in a empty dark room...")
         print("You see two doors: one on the [right] and one on the [left]...")
@@ -19,12 +19,18 @@ def start():
             pass
         if count >=3:
             #Death function call 
+            cause = "This will be printed by Death() function"
+            
+            death(cause)
             pass
         else:
             #No valid input from player
             print("You look to your [left] and [right]...")
             print("and decide to take a nap.")
+            count = count +1 
 
-        
-        count = count +1 
-
+def death(cause):
+    #prints cause variable
+    print(cause)
+    # Returns to main menu
+    main_menu()
