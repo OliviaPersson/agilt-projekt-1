@@ -31,22 +31,41 @@ def start():
 
 def death(cause):
     #prints cause variable
-    print(cause)
+    print(cause + " nice try!")
     # Returns to main menu
     main_menu()
 
 
 def dragon_room():
+    while True:
 
-    print("You see a dragon...")
-    print("Beside the dragon there is a pot of gold... ")
-    print("In the distance you spot a door...")
-    print("The dragon seems to not notice you...")
-    print("Do you [flee] the dragon through the door... ")
-    print("Do you [steal] the gold from the dragon ...")
-    print("Do you ")
+        print("You see a dragon...")
+        print("Beside the dragon there is a pot of gold... ")
+        print("In the distance you spot a door...")
+        print("The dragon seems to not notice you...")
+        print("Do you [flee] the dragon through the door... ")
+        print("Do you [steal] the gold from the dragon ...")
+        print("Do you ")
+        print("\n" * 3)
 
-    print()
+        user_input = input("> ")
+
+        if user_input == "flee":
+            print("You sprint as fast as possible toward the nearest exit...")
+            start()
+        elif user_input == "fight" or user_input == "attack":
+            print("You decided to attack the dragon...")
+            cause = "You died"
+            death(cause)
+        elif user_input == "steal":
+            print("You tried to steal from the dragon...")
+            print("It stared at you, and in blink of an eye you disappear in flash of light...")
+            skeleton_room()
+
+            pass
+        else:
+            print(f"I have no idea what that {in_data} is")
+    
 
 def skeleton_room():
         print("You are  in a room with a skeleton..")
