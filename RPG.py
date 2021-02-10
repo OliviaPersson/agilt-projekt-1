@@ -29,11 +29,11 @@ def start():
             print("and decide to take a nap.")
             count = count +1 
 
-def death(cause):
-    #prints cause variable
-    print(cause + " nice try!")
-    # Returns to main menu
-    main_menu()
+#def death(cause):
+#    #prints cause variable
+#    print(cause + " nice try!")
+#    # Returns to main menu
+#    start()
 
 
 def dragon_room():
@@ -64,7 +64,7 @@ def dragon_room():
 
             pass
         else:
-            print(f"I have no idea what that {in_data} is")
+            print(f"I have no idea what that {user_input} is")
     
 
 def skeleton_room():
@@ -89,10 +89,30 @@ def skeleton_room():
     #
 
 def mysterious_old_man_room():
-        print("You are in a room.. suddenly a mysterious old walks up to you... ")
-        print("He challenges you to a evil game of ... tic tac toe.")
-        print("")
-        #calls TIcTicToe()game
+        while True:
+            print("You are in a room.. suddenly a mysterious old walks up to you... ")
+            print("He challenges you to a evil game of ... tic tac toe.")
+            print("Do you accept [y] or [n] .")
+
+            user_input = input("> ")
+
+            if user_input.capitalize == "Y":
+                
+                print("The old man is happy with your choice...")
+                #calls TIcTicToe()game
+                if True:#TicTactoe == True 
+                    #
+                    pass
+                pass
+            elif user_input.capitalize == "N":
+                print("The mysteroious old man is disappointed and whispers a spell... ")
+                print("You disappear instantly")
+                pass
+            elif user_input == "":
+                pass
+            else:
+                print(f"I don't know what {user_input} is.")
+
 
 def gold_room():
     print
