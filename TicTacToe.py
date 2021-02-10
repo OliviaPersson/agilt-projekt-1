@@ -1,11 +1,16 @@
 import random
 
 class TicTacToe:
+	GAME_WIN = 0
+	GAME_LOSS = 1
+	GAME_TIE = 2
+	
 	def __init__(self):
 	#Constructor
 		self.board = [" "]*9
 		self.free_spaces = list(range(9))
 		self.players = ["X", "O"]
+		self.game_result = -1 #placeholder value
 
 	def display_board(self):
 	#Shows visualization of the current board state
@@ -20,9 +25,11 @@ class TicTacToe:
 		for player in self.players:
 			if self.is_winner(player):
 				print(player + " is the winner!")
+				self.game_result = TicTacToe.GAME_WIN if player == "X" else TicTacToe.GAME_LOSS
 				return True			
 		if not self.free_spaces: #No-one has won, but the board has no more free spaces.
 			print("It's a draw!")
+			self.game_result = TicTacToe.GAME_TIE
 			return True
 		return False #No-one has won, and it's not a draw, so the game hasn't ended yet.
 
@@ -69,6 +76,7 @@ class TicTacToe:
 			#pass control to the next player
 			currentPlayerID = (currentPlayerID + 1) % len(self.players)
 		self.display_board()
+		return self.game_result
 	
 	def play_vs_AI(self):
 	#Starts a game against a computer-controlled opponent.
@@ -82,4 +90,5 @@ class TicTacToe:
 			self.free_spaces.remove(AI_move)
 			print(f"AI chose square {AI_move + 1}.")
 		self.display_board()
+		return self.game_result
 #end class TicTacToe
