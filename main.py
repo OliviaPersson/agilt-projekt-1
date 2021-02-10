@@ -6,26 +6,28 @@ def main_menu():
         print("******************************************")
         print("Welcome to group 5's project games ")
         print("Choose a game !!")
-        print("Type [A] to play an adventure game.")
-        print("Type [G] to play a guess a number game.")
-        print("Type [RPS] to play rock papper scissors.")
-        print("Type [TT] to play tic-tac-toe.")
+        print("Type [1] to play an adventure game.")
+        print("Type [2] to play a guess a number game.")
+        print("Type [3] to play rock papper scissors.")
+        print("Type [4] to play tic-tac-toe.")
         print("Type [E] to exit application.")
         print("*******************************************")
+        print("\n" * 3)
+        in_data = input("> ")
 
-        if True:
+        if in_data == "2":
             #Guess a number function call herer.
             pass
-        if True:
+        if in_data == "1":
             #RPG function call here.
             pass
-        elif True:
+        elif in_data == "3":
             #Rock papper scissors function call here.
             pass
-        elif True:
+        elif in_data == "4":
             #Tic Tac Toe function call here.
             pass
-        elif True:
+        elif in_data.capitalize == "E":
             #Exits application on [E] command.
 
             exit(0)
@@ -37,7 +39,7 @@ def main_menu():
 
 
 
-    #test
     
     
-    pass
+    
+    
