@@ -9,12 +9,12 @@ def start():
         print("You see two doors: one on the [right] and one on the [left]...")
         print("Which door do you choose ?")
 
-        input = input("> ")
+        userinput = input("> ")
         #All possible choices
-        if input  == "right" and count  < 3:
+        if userinput  == "right" and count  < 3:
             #call a room function
             pass
-        if input == "left" and count < 3:
+        if userinput == "left" and count < 3:
             #Call a room function
             pass
         if count >=3:
