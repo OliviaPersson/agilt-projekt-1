@@ -9,12 +9,12 @@ def start():
         print("You see two doors: one on the [right] and one on the [left]...")
         print("Which door do you choose ?")
 
-        userinput = input("> ")
+        user_input = input("> ")
         #All possible choices
-        if userinput  == "right" and count  < 3:
+        if user_input  == "right" and count  < 3:
             #call a room function
             pass
-        if userinput == "left" and count < 3:
+        if user_input == "left" and count < 3:
             #Call a room function
             pass
         if count >=3:
@@ -53,9 +53,9 @@ def skeleton_room():
         print("It stands before you and challenges you to a guess the number game. ")
         print("Do you accept [y] or [n] ?")
 
-        userinput = input("> ")
+        user_input = input("> ")
         
-        if userinput == "y" :
+        if user_input == "y" :
             #Guess number game call here
             #if guess_game return true
             #Calls next room 
