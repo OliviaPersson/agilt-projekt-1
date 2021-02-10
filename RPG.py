@@ -1,3 +1,4 @@
+
 #Implements a start menu for a adventure type game.
 
 def start():
@@ -19,21 +20,13 @@ def start():
             pass
         if count >=3:
             #Death function call 
-            cause = "This will be printed by Death() function"
-            
-            death(cause)
+            print("This will be printed by Death() function")
             pass
         else:
             #No valid input from player
             print("You look to your [left] and [right]...")
             print("and decide to take a nap.")
             count = count +1 
-
-def death(cause):
-    #prints cause variable
-    print(cause + " nice try!")
-    # Returns to main menu
-    main_menu()
 
 
 def dragon_room():
@@ -82,7 +75,6 @@ def skeleton_room():
             pass
         else:
             print("You do nothing but stand still and die!!!")
-            main_menu()
         
         
         #calls guessnumber() game
