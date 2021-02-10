@@ -10,31 +10,49 @@ def random_number():
     from random import randint
     return randint(1,10)
 
-def count_and_compere_guessednumber():
+def count_and_compere_guessednumber(op):
     #Take a number as an input and compere to a random number and call a function for printing the resault
-    count = 1
-    answer = random_number()
-    while count <= 3:
-        print('Guess a number: ')
-        guess = int(input())
-        if guess != answer:
-            if guess < answer:
-                print_guess_status('to low',count)
-                count += 1
-            elif guess > answer:
-                print_guess_status('to high',count)
-                count += 1
+
+    if op == 'm':
+        count = 1
+        answer = random_number()
+        while count <= 3:
+            print('Guess a number: ')
+            guess = int(input())
+            if guess != answer:
+                if guess < answer:
+                    print_guess_status('to low',count)
+                    count += 1
+                elif guess > answer:
+                    print_guess_status('to high',count)
+                    count += 1
+            else:
+                print_guess_status('right',count)
+                break
+
+        print('Do you want to play again? y/n')
+        answer = input()
+        if answer == 'y':
+            count_and_compere_guessednumber('m')
+        elif answer == 'n':
+            main_menu()
         else:
-            print_guess_status('right',count)
-            break
+            print('You can onley select y for yes or n for no.')
 
-    print('Do you want to play again? y/n')
-    answer = input()
-    if answer == 'y':
-        count_and_compere_guessednumber()
-    elif answer == 'n':
-        main_menu()
     else:
-        print('You can onley select y for yes or n for no.')
+        count = 1
+        answer = random_number()
+        while count <= 3:
+            print('Guess a number: ')
+            guess = int(input())
+            if guess != answer:
+                if guess < answer:
+                    print(f'to low - attempt {count}')
+                    count += 1
+                elif guess > answer:
+                    print(f'to high - attempt {count}')
 
-count_and_compere_guessednumber()
+                    count += 1
+            else:
+                return True
+
