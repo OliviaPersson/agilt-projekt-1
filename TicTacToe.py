@@ -32,6 +32,23 @@ class TicTacToe:
 			self.game_result = TicTacToe.GAME_TIE
 			return True
 		return False #No-one has won, and it's not a draw, so the game hasn't ended yet.
+	
+	def game_menu(self):
+		print("Welcome to Tic-Tac-Toe!")
+		choice = ""
+		while(choice != "3"):
+			print("1	Play against AI")
+			print("2	Play multiplayer")
+			print("3	Quit")
+			choice = input(">")
+			if(choice == "1"):
+				self.play_vs_AI()
+			elif(choice == "2"):
+				self.play_multiplayer()
+			elif(choice == "3"):
+				print("Exiting Tic-Tac-Toe.")
+			else:
+				print("Unrecognized command.")
 
 	def is_winner(self, player):
 	#Checks whether a player has won

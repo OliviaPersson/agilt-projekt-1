@@ -19,11 +19,9 @@ def start():
         if user_input  == "right":
             print_slow("You chose the right door...")
             dragon_room()
-            pass
         if user_input == "left":
             print_slow("You chose the left door")
             lava_room()
-            pass
         else:
             #No valid input from player
             print_slow("You look to your [left] and [right]...")
