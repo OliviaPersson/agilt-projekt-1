@@ -28,7 +28,7 @@ def main_menu():
     
     elif in_data == "3":
         #Rock papper scissors function call here.
-        play_rock_paper_scissors()
+        play_rock_paper_scissors("m")
 
     elif in_data == "4":
         #Tic Tac Toe function call here.

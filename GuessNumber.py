@@ -17,7 +17,7 @@ def count_and_compere_guessednumber(op):
         count = 1
         answer = random_number()
         while count <= 3:
-            print('Guess a number: ')
+            print('Guess a number from 1 to 10')
             guess = int(input())
             if guess != answer:
                 if guess < answer:
@@ -35,6 +35,7 @@ def count_and_compere_guessednumber(op):
         if answer == 'y':
             count_and_compere_guessednumber('m')
         elif answer == 'n':
+            from main import main_menu
             main_menu()
         else:
             print('You can onley select y for yes or n for no.')
@@ -43,7 +44,7 @@ def count_and_compere_guessednumber(op):
         count = 1
         answer = random_number()
         while count <= 3:
-            print('Guess a number: ')
+            print('Guess a number from 1 to 10')
             guess = int(input())
             if guess != answer:
                 if guess < answer:
