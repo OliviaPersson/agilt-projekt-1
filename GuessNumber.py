@@ -54,5 +54,6 @@ def count_and_compere_guessednumber(op):
 
                     count += 1
             else:
+                print("You won!")
                 return True
 

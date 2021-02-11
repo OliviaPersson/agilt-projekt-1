@@ -44,8 +44,7 @@ def main_menu():
         print("You have not typed in a valid command")
         print("Please try again.")
 
-
-
+main_menu()
     
     
     

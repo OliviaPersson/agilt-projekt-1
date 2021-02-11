@@ -1,8 +1,8 @@
 #Implements a start menu for a adventure type game.
+loop = False
 
 def start():
-    count = 0
-    while True:
+    while loop == False:
         #Prints an intro message to player
         print("Suddenly you awake...")
         print("You are in a empty dark room...")
@@ -11,30 +11,22 @@ def start():
 
         user_input = input("> ")
         #All possible choices
-        if user_input  == "right" and count  < 3:
+        if user_input  == "right":
             print("You chose the right door...")
             dragon_room()
             pass
-        if user_input == "left" and count < 3:
+        if user_input == "left":
             print("You chose the left door")
             skeleton_room()
-            pass
-        if count >=3:
-            #Death function call 
-            cause = "This will be printed by Death() function"
-            
-            death(cause)
             pass
         else:
             #No valid input from player
             print("You look to your [left] and [right]...")
             print("and decide to take a nap.")
-            count = count +1 
 
 
 
 def dragon_room():
-    while True:
 
         print("You see a dragon...")
         print("Beside the dragon there is a pot of gold... ")
@@ -53,7 +45,7 @@ def dragon_room():
         elif user_input == "fight" or user_input == "attack":
             print("You decided to attack the dragon...")
             print("You died. Good job")
-            
+            start()
         elif user_input == "steal":
             print("You tried to steal from the dragon...")
             print("It stared at you, and in blink of an eye you disappear in flash of light...")
@@ -71,22 +63,24 @@ def skeleton_room():
 
         user_input = input("> ")
         
-        if user_input.capitalize == "Y" :
-            #Guess number game call here
-            
-             
-            if True:#if guess game returns true 
+        if user_input == "y":
+            from GuessNumber import count_and_compere_guessednumber
+            yo = count_and_compere_guessednumber("r")
+
+                        
+            if yo == True: 
                 print("You disappear in a flash of light ...")
-                mysterious_mysterious_old_man_room()
-                
+                mysterious_old_man_room()
+            else:
+                death()
+                loop = True   
             
             
         else:
-            print("You do nothing but stand still and die!!!")
-            start()
+            death()
+            loop = True
         
         
-        #calls guessnumber() game
     
 
 def mysterious_old_man_room():
@@ -114,6 +108,8 @@ def mysterious_old_man_room():
             else:
                 print(f"I don't know what {user_input} is.")
 
+def death():
+    print("You died!")
 
 def gold_room():
     print("You are in a gold room ...")
