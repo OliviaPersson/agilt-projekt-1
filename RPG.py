@@ -13,10 +13,12 @@ def start():
         user_input = input("> ")
         #All possible choices
         if user_input  == "right" and count  < 3:
-            #call a room function
+            print("You chose the right door...")
+            dragon_room()
             pass
         if user_input == "left" and count < 3:
-            #Call a room function
+            print("You chose the left door")
+            skeleton_room()
             pass
         if count >=3:
             #Death function call 
@@ -30,11 +32,6 @@ def start():
             print("and decide to take a nap.")
             count = count +1 
 
-#def death(cause):
-#    #prints cause variable
-#    print(cause + " nice try!")
-#    # Returns to main menu
-#    start()
 
 
 def dragon_room():
@@ -46,7 +43,7 @@ def dragon_room():
         print("The dragon seems to not notice you...")
         print("Do you [flee] the dragon through the door... ")
         print("Do you [steal] the gold from the dragon ...")
-        print("Do you ")
+        print("Do you [fight] the dragon  ")
         print("\n" * 3)
 
         user_input = input("> ")
@@ -56,38 +53,42 @@ def dragon_room():
             start()
         elif user_input == "fight" or user_input == "attack":
             print("You decided to attack the dragon...")
-            cause = "You died"
-            death(cause)
+            print("You died. Good job")
+            
         elif user_input == "steal":
             print("You tried to steal from the dragon...")
             print("It stared at you, and in blink of an eye you disappear in flash of light...")
             skeleton_room()
 
-            pass
+            
         else:
             print(f"I have no idea what that {user_input} is")
     
 
 def skeleton_room():
         print("You are  in a room with a skeleton..")
-        print("It stands before you and challenges you to a guess the number game. ")
+        print("It stands before you and challenges you to a guess the number game... ")
         print("Do you accept [y] or [n] ?")
 
         user_input = input("> ")
         
-        if user_input == "y" :
+        if user_input.capitalize == "Y" :
             #Guess number game call here
-            #if guess_game return true
-            #Calls next room 
-            #else calls main_menu()
-            pass
+            
+             
+            if True:#if guess game returns true 
+                print("You disappear in a flash of light ...")
+                mysterious_mysterious_old_man_room()
+                
+            
+            
         else:
             print("You do nothing but stand still and die!!!")
-            main_menu()
+            start()
         
         
         #calls guessnumber() game
-    #
+    
 
 def mysterious_old_man_room():
         while True:
@@ -100,23 +101,39 @@ def mysterious_old_man_room():
             if user_input.capitalize == "Y":
                 
                 print("The old man is happy with your choice...")
-                #calls TIcTicToe()game
+                #calls TIcTicToe() game 
+
                 if True:#TicTactoe == True 
-                    #
+                    #calls gold_room()
                     pass
                 pass
             elif user_input.capitalize == "N":
                 print("The mysteroious old man is disappointed and whispers a spell... ")
                 print("You disappear instantly")
-                pass
-            elif user_input == "":
-                pass
+                
+
             else:
                 print(f"I don't know what {user_input} is.")
 
 
 def gold_room():
-    print
+    print("You are in a gold room ...")
+    print("There is treasure everywhere...")
+    print("How much do you take ? ...")
+
+    user_input = input("> ")
+
+    user_input = int(user_input)
+
+    if user_input < 50 :
+        print("Good job . You are not greedy. You Win")
+        
+    
+    else:
+        print("You greedy bastard.")
+
+        
+
     
 
 =======
