@@ -131,7 +131,3 @@ def gold_room():
     else:
         print("You greedy bastard.")
 
-        
-
-    
-
