@@ -1,6 +1,6 @@
 def print_winner_and_score(winner,player1,player2):
     #Print who won the round and the current score.
-    print(f'{winner} has won!\nThe score is: \nPlayer 1: {player1}\nPlayer 2: {player2}')
+    print(f'{winner} has won!\nThe score is: \nYou: {player1}\nOld man: {player2}')
 
 def computer_choice():
     #Generates random choice for computer
@@ -45,6 +45,16 @@ def play_rock_paper_scissors(op):
     
     
         best_of_winner(computer_win,user_win)
+
+        print('Do you want to play again? y/n')
+        answer = input()
+        if answer == 'y':
+            play_rock_paper_scissors('m')
+        elif answer == 'n':
+            from main import main_menu
+            main_menu()
+        else:
+            print('You can onley select y for yes or n for no.')
 
     else:
         while count <= 10:
