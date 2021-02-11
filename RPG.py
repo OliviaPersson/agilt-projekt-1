@@ -14,17 +14,17 @@ def start():
         if user_input  == "right" and count  < 3:
             print("You chose the right door...")
             dragon_room()
-            pass
+            
         if user_input == "left" and count < 3:
             print("You chose the left door")
             skeleton_room()
-            pass
-        if count >=3:
-            #Death function call 
-            cause = "This will be printed by Death() function"
             
-            death(cause)
-            pass
+        if count >=3:
+            
+            print("You froze to death.")
+            
+            
+            
         else:
             #No valid input from player
             print("You look to your [left] and [right]...")
