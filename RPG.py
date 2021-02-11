@@ -22,14 +22,32 @@ def start():
             pass
         if user_input == "left":
             print_slow("You chose the left door")
-            skeleton_room()
+            lava_room()
             pass
         else:
             #No valid input from player
             print_slow("You look to your [left] and [right]...")
             print_slow("and decide to take a nap.")
 
+def lava_room():
+    print_slow("The floor is lava...")
+    print_slow("You see a haunting apperation on the other side of the room...")
+    print_slow("He challenges you to a game of Tic Tac Toe...")
+    print_slow("Do you accept [y] or [n] ?")
 
+    user_input = input("> ")
+        
+    if user_input == "y":
+        import TicTacToe
+        if (TicTacToe.TicTacToe().play_vs_AI() == 0):
+        #player has won
+            print_slow("You disappear in a flash of light ...")
+            skeleton_room()
+        else:
+            death()                        
+    else:
+        print_slow("The apperation pushes you into the lava")
+        death()
 
 def dragon_room():
 
