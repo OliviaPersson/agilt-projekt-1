@@ -1,15 +1,13 @@
 #Implements a start menu for a adventure type game.
-loop = False
 from time import sleep
 
 def print_slow(txt):
     for x in txt:                     # cycle through the text one character at a time
         print(x, end='', flush=True)  # print one character, no new line, flush buffer
-        sleep(0.01)
+        sleep(0.03)
     print() # go to new line
 
 def start():
-    while loop == False:
         #Prints an intro message to player
         print_slow("Suddenly you awake...")
         print_slow("You are in a empty dark room...")
@@ -52,17 +50,13 @@ def dragon_room():
         elif user_input == "fight" or user_input == "attack":
             print_slow("You decided to attack the dragon...")
             death()
-            start()
         elif user_input == "steal":
             print_slow("You tried to steal from the dragon...")
             print_slow("It stared at you, and in blink of an eye you disappear in flash of light...")
-            skeleton_room()
-
-            
+            skeleton_room()          
         else:
             print_slow(f"I have no idea what that {user_input} is")
     
-
 def skeleton_room():
         print_slow("You are  in a room with a skeleton..")
         print_slow("It stands before you and challenges you to a guess the number game... ")
@@ -72,24 +66,18 @@ def skeleton_room():
         
         if user_input == "y":
             from GuessNumber import count_and_compere_guessednumber
-            yo = count_and_compere_guessednumber("r")
-
-                        
-            if yo == True: 
+            truecheck = count_and_compere_guessednumber("r")
+                       
+            if truecheck == True: 
                 print_slow("You disappear in a flash of light ...")
                 mysterious_old_man_room()
             else:
-                death() 
-            
-            
+                death()                        
         else:
+            print_slow("The skeleton stabs you in the face")
             death()
         
-        
-    
-
 def mysterious_old_man_room():
-        while True:
             print_slow("You are in a room.. suddenly a mysterious old man walks up to you... ")
             print_slow("He challenges you to a evil game of ... Rock paper Scissors.")
             print("Do you accept [y] or [n] .")
@@ -100,9 +88,9 @@ def mysterious_old_man_room():
                 
                 print_slow("The old man is happy with your choice...")
                 from RockPaperScissors import play_rock_paper_scissors
-                yoyo = play_rock_paper_scissors("r")
+                truecheck = play_rock_paper_scissors("r")
 
-                if yoyo == True: 
+                if truecheck == True: 
                     gold_room()
                 else:
                     death()
@@ -112,13 +100,12 @@ def mysterious_old_man_room():
                 print_slow("You disappear instantly")
                 death()
                 
-
             else:
                 print_slow(f"I don't know what {user_input} is.")
 
 def death():
     print_slow("You died!")
-    a = input("You want to play again y/n")
+    a = input("You want to play again y/n: ")
     if a == "y":
         start()
     else:

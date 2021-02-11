@@ -14,7 +14,7 @@ def main_menu():
     print("Type [2] to play a guess a number game.")
     print("Type [3] to play rock papper scissors.")
     print("Type [4] to play tic-tac-toe.")
-    print("Type [E] to exit application.")
+    print("Type [5] to exit application.")
     print("*******************************************")
     print("\n" * 3)
     in_data = input("> ")
@@ -34,7 +34,7 @@ def main_menu():
         #Tic Tac Toe function call here.
         pass
 
-    elif in_data.capitalize == "E":
+    elif in_data == "5":
         #Exits application on [E] command.
 
         exit(0)
